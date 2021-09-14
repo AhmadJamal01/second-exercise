@@ -1,0 +1,20 @@
+.title{
+    position: relative;
+    background-color: cornflowerblue;
+    height: 75px;
+}
+
+.title h1{
+    position: absolute;
+    left: 100px;
+    top: 15px;
+}
+
+.title button{
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    padding: 10px 50px;
+    border-radius: 0;
+}
+
