@@ -1,0 +1,31 @@
+.container-background{}
+
+.flex-container{
+    display: flex;
+    width: 100%;
+    background-color: cornflowerblue;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.flex-item{
+    flex:0 0 20%;
+    padding:20px;
+    text-align:center;
+}
+
+.vertical-bar{
+    position:relative;
+    transform:rotate(90deg);
+    width: 50px;
+    hr{
+        border:1px solid white ;
+    }
+}
+
+
+.address{
+    margin-bottom: 0;
+}

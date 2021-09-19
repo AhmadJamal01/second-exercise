@@ -1,30 +1,30 @@
 <form [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
   <div class="row">
-    <div class="col-lg-6  my-3">
+    <div class="col-lg-6 my-3">
       <!-- kan col-lg-4 w mx-3 mn gheir el modal -->
       <label for="name" class="form-label">Name</label>
       <input
-      type="text"
-      class="form-control"
-      id="name"
-      placeholder="eg. John Doe"
-      formControlName="name"
-      required
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="eg. John Doe"
+        formControlName="name"
+        required
       />
     </div>
-    <div class="col-lg-6  my-3">
+    <div class="col-lg-6 my-3">
       <label for="email" class="form-label">Email Address</label>
       <input
-      type="email"
-      class="form-control"
-      id="email"
-      placeholder="eg. johndoe@gmail.com"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="eg. johndoe@gmail.com"
         formControlName="email"
         required
-        />
-      </div>
-      <div class="col-lg-6 my-3">
-        <!-- kan col-lg-4 w mx-3 mn gheir el modal -->
+      />
+    </div>
+    <div class="col-lg-6 my-3">
+      <!-- kan col-lg-4 w mx-3 mn gheir el modal -->
       <label for="phone-number" class="form-label">Phone Number</label>
       <input
         type="text"
@@ -67,9 +67,9 @@
       <input
         type="text"
         class="form-control"
-        id="address-zip"
+        id="address-suite"
         placeholder="-"
-        formControlName="zip"
+        formControlName="suite"
         required
       />
     </div>

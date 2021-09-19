@@ -18,10 +18,10 @@
       </thead>
       <tbody>
           <tr *ngFor="let user of resultUsers">
-              <td>{{user.name}} </td>
-              <td>{{user.email}}</td>
-              <td>{{user.username}}</td>
-              <td>{{user.address.street+user.address.suite+" "+ user.address.city}}</td>
+            <td><a routerLink="/user/{{user.id}}">{{user.name}}</a></td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.address.street + " " + user.address.suite + " " + user.address.city}}</td>
           </tr>
       </tbody>
     </table>

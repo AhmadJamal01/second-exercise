@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Form, FormControl, FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Validators } from '@angular/forms';
 
 export class AddUserComponent implements OnInit {
 
-  newUser= new FormControl({name:''})
+  // newUser= new FormControl({name:''})
   // newUserForm = new FormGroup({
   //   name: new FormControl('',Validators.required),
   //   email: new FormControl('',Validators.required),
@@ -30,11 +30,15 @@ export class AddUserComponent implements OnInit {
     email:['',Validators.required],
     phoneNumber:['',Validators.required],
     address:this.fb.group({
-      city:['',Validators.required],
       street:['',Validators.required],
-      zip:['',Validators.required],
+      suite:['',Validators.required],
+      city:['',Validators.required],
     })
   })
+
+  @Output() onFormGroupChange = new EventEmitter<any>();
+
+
 
   constructor(private fb:FormBuilder) { }
 
@@ -44,7 +48,5 @@ export class AddUserComponent implements OnInit {
   onSubmit(){
     console.warn(this.newUserForm.value);
     // this.newUserForm.setValue({})
-
   }
-
 }

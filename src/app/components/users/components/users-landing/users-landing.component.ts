@@ -8,8 +8,8 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersLandingComponent implements OnInit {
 
-  resultUsers:any;
-  formState: boolean=false;
+  resultUsers: any;
+  formState: boolean = false;
 
   constructor(private userService: UsersService) { }
 
@@ -18,9 +18,9 @@ export class UsersLandingComponent implements OnInit {
     // console.log(JSON.stringify(this.resultUsers[0]))
   }
 
-  getAllUsers(){
-    this.userService.getAllUsers().subscribe((users)=>{
-      this.resultUsers=users;
+  getAllUsers() {
+    this.userService.getAllUsers().subscribe((users) => {
+      this.resultUsers = users;
       // this.resultUsers.array.forEach((user: { address: string; }) => {
       //   let Address = JSON.stringify(user.address);
       //   user.address=Address;
@@ -30,8 +30,13 @@ export class UsersLandingComponent implements OnInit {
     })
   }
 
-  toggleForm(){
-    this.formState=!this.formState;
+  toggleForm() {
+    this.formState = !this.formState;
+  }
+
+  getUser(id: number): any {
+    const user = this.resultUsers.find((u: { id: number; }) => u.id === id)!;
+    return user;
   }
 
 }

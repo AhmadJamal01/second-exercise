@@ -1,0 +1,21 @@
+<div class="container-background">
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>{{user.name}}</p>
+        </div>
+        <div class="vertical-bar">
+            <hr>
+        </div>
+        <div class="flex-item">
+            <p>{{user.email}}</p>
+            <p>{{user.phoneNumber}}</p>
+        </div>
+        <div class="vertical-bar">
+            <hr>
+        </div>
+        <div class="flex-item">
+            <p class="address">Address</p>
+            <p class="address">{{user.address.street}} {{user.address.suite}} {{user.address.city}}</p>
+        </div>
+    </div>
+</div>
