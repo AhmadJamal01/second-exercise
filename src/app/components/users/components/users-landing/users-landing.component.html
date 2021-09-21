@@ -1,54 +1,80 @@
-<app-add-user *ngIf="formState"></app-add-user>
-<div class="title">
-    <h1>Users</h1>
-    <!-- <button type="button" class="btn btn-light btn-sm text-primary" (click)="toggleForm()"> -->
-    <button type="button" class="btn btn-light btn-sm text-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
-      + Add User
-    </button>
-  </div>
-  <div class="table-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Number</th>
-          <th scope="col">Address</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let user of resultUsers">
-            <td><a routerLink="/user/{{user.id}}">{{user.name}}</a></td>
-            <td>{{user.email}}</td>
-            <td>{{user.username}}</td>
-            <td>{{user.address.street + " " + user.address.suite + " " + user.address.city}}</td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
+<div appColorBar class="title">
+  <h1>Users</h1>
+  <!-- <button type="button" class="btn btn-light btn-sm text-primary" (click)="toggleForm()"> -->
+  <button
+    type="button"
+    class="btn btn-light btn-sm text-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#addUserModal"
+  >
+    + Add User
+  </button>
+</div>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Number</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of resultUsers">
+        <!-- hansta5dem function b route 3shan t re-direct w emsa7 routerLink (click)=""-->
+        <td>
+          <a routerLink="/user/{{ user.id }}">{{ user.name }}</a>
+        </td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.username }}</td>
+        <td>
+          {{
+            user.address.street +
+              " " +
+              user.address.suite +
+              " " +
+              user.address.city
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <!-- Button trigger modal -->
+<!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
   Launch demo modal
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="addUserModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">User Info</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-        <app-add-user></app-add-user>
+        <app-add-user (onFormGroupChange)="addUser($event)"></app-add-user>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
 </div>
-
-  

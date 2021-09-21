@@ -39,4 +39,9 @@ export class UsersLandingComponent implements OnInit {
     return user;
   }
 
+  addUser(newUser: any) {
+    console.log("This is the user data inside the parent", newUser);
+     this.resultUsers.push(newUser);
+  }
+
 }

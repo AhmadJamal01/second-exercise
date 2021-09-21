@@ -7,6 +7,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { DetailsBarComponent } from './components/details-bar/details-bar.component';
+//import { ColorBarDirective } from 'src/app/directives/color-bar.directive';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DetailsBarComponent } from './components/details-bar/details-bar.compon
     UsersLandingComponent,
     AddUserComponent,
     UserPageComponent,
-    DetailsBarComponent
+    DetailsBarComponent,
+    //ColorBarDirective
   ],
   imports: [
     CommonModule,

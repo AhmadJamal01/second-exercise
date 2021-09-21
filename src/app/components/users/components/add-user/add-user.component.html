@@ -48,9 +48,9 @@
         formControlName="city"
         required
       >
-        <option value="1">Giza</option>
-        <option value="2">Cairo</option>
-        <option value="3">Other</option>
+        <option value="Giza">Giza</option>
+        <option value="Cairo">Cairo</option>
+        <option value="_">Other</option>
       </select>
     </div>
     <div class="col-lg-4 mt-5">
@@ -68,7 +68,7 @@
         type="text"
         class="form-control"
         id="address-suite"
-        placeholder="-"
+        placeholder="suite"
         formControlName="suite"
         required
       />
@@ -81,6 +81,7 @@
       class="btn btn-primary m-5"
       type="submit"
       [disabled]="!newUserForm.valid"
+      (click)="addNewUser(newUserForm.value)"
     >
       Add
     </button>

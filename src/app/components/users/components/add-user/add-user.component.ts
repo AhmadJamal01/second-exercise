@@ -25,28 +25,32 @@ export class AddUserComponent implements OnInit {
   //   })
   // });
 
-  newUserForm=this.fb.group({
-    name:['',Validators.required],
-    email:['',Validators.required],
-    phoneNumber:['',Validators.required],
-    address:this.fb.group({
-      street:['',Validators.required],
-      suite:['',Validators.required],
-      city:['',Validators.required],
+  newUserForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.email],
+    phoneNumber: ['', Validators.required],
+    address: this.fb.group({
+      street: ['', Validators.required],
+      suite: ['', Validators.required],
+      city: ['', Validators.required],
     })
   })
 
   @Output() onFormGroupChange = new EventEmitter<any>();
+  addNewUser(user: any) {
+    console.log("New user data", user);
+    this.onFormGroupChange.emit(user);
+  }
 
 
-
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-  } 
+  }
 
-  onSubmit(){
+  onSubmit() {
     console.warn(this.newUserForm.value);
     // this.newUserForm.setValue({})
+
   }
 }
